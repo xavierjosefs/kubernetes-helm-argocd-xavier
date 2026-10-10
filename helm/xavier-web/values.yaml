@@ -1,5 +1,5 @@
 # Fase inicial: 2 replicas. Cambiar a 3 para demostrar GitOps.
-replicaCount: 3
+replicaCount: 2
 
 image:
   repository: nginx
@@ -13,7 +13,7 @@ service:
 page:
   title: "Kubernetes + Helm + Argo CD"
   subtitle: "Aplicacion de Xavier Fernandez - ID 1122340"
-  version: "v2 - Cambio sincronizado por Argo CD"
+  version: "v1 - Despliegue inicial"
 
 resources:
   requests:

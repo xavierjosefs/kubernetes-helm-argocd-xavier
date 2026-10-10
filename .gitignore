@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+*.log
+argocd/application-local.yaml
+evidencias/*.png
+evidencias/*.jpg
+evidencias/*.jpeg
+helm/xavier-web/charts/
+# Mantener las capturas fuera del repositorio si contienen información local

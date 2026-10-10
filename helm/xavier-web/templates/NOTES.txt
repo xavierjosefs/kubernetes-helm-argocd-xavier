@@ -1,0 +1,6 @@
+Servicio web instalado.
+Namespace: {{ .Release.Namespace }}
+Recurso: {{ include "xavier-web.fullname" . }}
+Para probarlo:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "xavier-web.fullname" . }} 8080:80
+  Abrir http://localhost:8080

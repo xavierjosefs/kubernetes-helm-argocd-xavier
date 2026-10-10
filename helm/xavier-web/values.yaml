@@ -1,0 +1,24 @@
+# Fase inicial: 2 replicas. Cambiar a 3 para demostrar GitOps.
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: stable-alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+page:
+  title: "Kubernetes + Helm + Argo CD"
+  subtitle: "Aplicacion de Xavier Fernandez - ID 1122340"
+  version: "v1 - Despliegue inicial"
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi

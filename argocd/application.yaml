@@ -1,0 +1,25 @@
+# Sustituir URL_REPOSITORIO_GITHUB por la URL HTTPS real de tu repositorio publico.
+# O ejecutar: .\scripts\aplicar-application.ps1 -RepoUrl "https://github.com/USUARIO/REPO.git"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: xavier-web
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: URL_REPOSITORIO_GITHUB
+    targetRevision: main
+    path: helm/xavier-web
+    helm:
+      releaseName: xavier
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo-gitops
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
